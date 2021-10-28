@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p The last digit of my S# is 0, so we will be using Math.log()
+  
+  br
+  hr
+
+  - var min = 1;
+  - var max = 100;
+  - var randValue = Math.floor(Math.random() * (max - min) + min);
+  - var logValue = Math.log(randValue);
+
+  if (typeof(x) == 'undefined')
+    p [Math.log()] applied to our randomly generated number: #{randValue}
+    p - The log(#{randValue}) is: #{logValue}
+  else
+    - logValue = Math.log(x);
+    p We randomly generated the number #{randValue} but the user supplied the value: #{x}
+    p [Math.log()] is now applied to the supplied value: #{x}
+    p - The log(#{x}) is: #{logValue}
+
+  
+
+
